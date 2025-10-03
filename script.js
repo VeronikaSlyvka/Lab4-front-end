@@ -1,10 +1,9 @@
+//task1
 const n = 144;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const nodeList = document.querySelectorAll('h1, h2, h3, h4, p, li, a, img, ol, ul');
+  const nodeList = document.querySelectorAll('h1, h2, h3, h4, p, li, a, img');
   const elems = Array.from(nodeList);
-
-  if (elems.length === 0) return;
 
   elems.forEach((el, i) => {
     const idx = i + 1; 
@@ -39,5 +38,55 @@ document.addEventListener('DOMContentLoaded', () => {
       if (found) found.classList.toggle('active-query');
     });
   }
-
 });
+
+
+//task2
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('image-container');
+    const addBtn = document.getElementById('add-img');
+    const increaseBtn = document.getElementById('increase-img');
+    const decreaseBtn = document.getElementById('decrease-img');
+    const removeBtn = document.getElementById('remove-img');
+
+    const originalSrc = 'Flam.jpg'; 
+    let img = document.getElementById('flam-img');
+    let imgWrapper = document.querySelector('#image-container a');
+
+
+    addBtn.addEventListener('click', () => {
+        if (!document.querySelector('#image-container a')) {
+            imgWrapper = document.createElement('a');
+            imgWrapper.href = "https://en.wikipedia.org/wiki/Fl%C3%A5m";
+            imgWrapper.target = "_blank";
+
+            img = document.createElement('img');
+            img.src = originalSrc;
+            img.alt = "Флом";
+            img.id = "flam-img";
+            img.width = 800;
+
+            imgWrapper.appendChild(img);
+            container.appendChild(imgWrapper);
+        }
+    });
+
+    increaseBtn.addEventListener('click', () => {
+        const imgNow = document.getElementById('flam-img');
+        if (imgNow) imgNow.width *= 1.1;   //+10%
+    });
+
+    decreaseBtn.addEventListener('click', () => {
+        const imgNow = document.getElementById('flam-img');  
+        if (imgNow) imgNow.width *= 0.9;  //-10%
+    });
+
+    removeBtn.addEventListener('click', () => {
+        const imgNow = document.getElementById('flam-img');
+        if (imgNow) {
+            container.removeChild(imgNow.parentElement); 
+        }
+    });
+});
+
+

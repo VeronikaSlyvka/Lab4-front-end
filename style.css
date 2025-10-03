@@ -5,20 +5,25 @@ body {
 
 .active-get {
     background-color: #ffb4ec; 
-    color: #012a4a !important; 
-    padding: 4px;
-    border-radius: 4px;
-    transition: background-color 0.2s, color 0.2s;
+    color: #348207; 
 }
 
 .active-query {
     background-color: #2a9d8f; 
-    color: #ffffff !important;
-    padding: 4px;
-    border-radius: 4px;
-    transition: background-color 0.2s, color 0.2s;
+    color: #fed0ff;
 }
 
 [data-idx] {
     cursor: pointer;
 }
+
+#buttons {
+    margin: 10px;
+}
+
+#buttons button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
