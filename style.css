@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+.active-get {
+    background-color: #ffb4ec; 
+    color: #012a4a !important; 
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.active-query {
+    background-color: #2a9d8f; 
+    color: #ffffff !important;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+[data-idx] {
+    cursor: pointer;
+}
